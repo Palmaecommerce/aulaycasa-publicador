@@ -1,7 +1,7 @@
 import asyncio, os, sys, subprocess, shutil
 from playwright.async_api import async_playwright
 FONT="/home/claude/planes-img/node_modules/@fontsource/poppins/files/poppins-latin-%s-normal.woff2"
-ICON="/home/claude/logo/final/palma-icono-1024.png"
+ICON="/home/claude/logos/foto_perfil_casita.png"
 W,H=540,960  # se graba a la mitad y se escala a 1080x1920
 CSS=f"""@font-face{{font-family:P;src:url({FONT%600});font-weight:600}}@font-face{{font-family:P;src:url({FONT%800});font-weight:800}}
 *{{margin:0;box-sizing:border-box}}body{{width:{W}px;height:{H}px;overflow:hidden;font-family:P;color:#fff;
@@ -23,7 +23,7 @@ def html(scenes):
     for i,(dur,body) in enumerate(scenes):
         anim='stay' if i==len(scenes)-1 else 'show'
         out.append(f'<div class=sc style="animation:{anim} {dur}s linear {t}s forwards">{body.replace("D+",str(t)+"+")}</div>'); t+=dur
-    return f'<html><head><meta charset=utf-8><style>{CSS}</style></head><body><div class=top><img src="{ICON}">Palma Ecommerce</div>{"".join(out)}</body></html>',t
+    return f'<html><head><meta charset=utf-8><style>{CSS}</style></head><body><div class=top><img src="{ICON}">Aula y Casa</div>{"".join(out)}</body></html>',t
 def d(base,x): return f'style="animation:in .35s ease-out {base+x:.2f}s forwards"'
 async def rec(name,scenes):
     h,total=html(scenes); open(name+'.html','w').write(h)

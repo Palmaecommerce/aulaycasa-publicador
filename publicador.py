@@ -1,4 +1,4 @@
-"""Robot de publicación de Palma Ecommerce (token de usuario del sistema de Meta, no vence).
+"""Robot de publicación de Aula y Casa (token de usuario del sistema de Meta, no vence).
 
 Publica en Instagram (API oficial con login de Instagram) y, si hay token de página,
 en Facebook. Lee calendario.json, publica lo que ya tiene la hora cumplida y
@@ -13,13 +13,13 @@ Secretos (GitHub > Settings > Secrets and variables > Actions):
 import json, os, sys, time, datetime as dt, urllib.request, urllib.parse
 
 IG = "https://graph.facebook.com/v23.0"
-IG_USER = os.environ.get("IG_USER_ID") or "17841414669238656"
+IG_USER = os.environ.get("IG_USER_ID") or "17841471299340251"
 FB = "https://graph.facebook.com/v23.0"
-REPO = os.environ.get("GITHUB_REPOSITORY", "Palmaecommerce/palma-publicador")
+REPO = os.environ.get("GITHUB_REPOSITORY", "aulaycasaok-ops/aulaycasa-publicador")
 RAW = f"https://raw.githubusercontent.com/{REPO}/main/media/"
 TOKEN = os.environ.get("IG_TOKEN", "")
 FB_TOKEN = os.environ.get("FB_PAGE_TOKEN", "")
-FB_PAGE = os.environ.get("FB_PAGE_ID") or "1389049390961304"
+FB_PAGE = os.environ.get("FB_PAGE_ID") or "1378296768711202"
 ESTADO = "data/estado.json"
 STATS = "data/estadisticas.json"
 
